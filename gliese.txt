@@ -1,0 +1,189 @@
+ CENA
+A Chegada
+Você é um astronauta que partiu em uma missão com mais 5 astronautas, mas ao decorrer da viagem houveram algumas complicações e seus companheiros não resistiram e restou apenas você. Ao aterrissar com sucesso na superfície do planeta Gliese 667 Cc sua nave não está em boas condições de uso e deverá ser abandonada, mas para isso você deve arranjar abrigo e alimento. Vamos lá?
+
+
+COMANDO
+iniciar_missao
+ACTION
+Iniciar Missão
+Seja bem vindo ao planeta Gliese 667 Cc! Vamos la!!!
+CENA1
+NONE
+NONE
+
+COMANDO
+quit
+ACTION
+Sair do jogo
+Até a próxima missão Gliese...
+exit
+NONE
+NONE
+
+END
+
+CENA
+1 - 
+Explorar ou esperar?
+Você está em sua nave e como indicado, sua missão é explorar o planeta, isso deverá ser feito para que sua vida seja mantida, caso contrário, seus dias estão contados. 
+
+COMANDO
+abrir_porta
+ACTION
+Abra a porta.
+A porta foi aberta. 
+NONE
+NONE
+NONE
+
+COMANDO
+sentar
+ACTION
+Sentar-se.
+Ouve-se conversas próximas de sua nave.
+NONE
+NONE
+NONE
+
+CENA
+Comunicação
+Você ouve vozes cada vez mais próximas...
+
+COMANDO
+sair_nave
+ACTION
+Sair
+Avista seres enormes e parecidos com orcs
+NONE
+NONE
+NONE
+
+CENA
+Comunicacao
+Algumas vozes são ouvidas vindas de fora da nave, você possui a autonomia de sair para tentar se comunicar com os nativos.
+
+COMANDO
+sair
+ACTION
+Você está fora da nave
+Os gliesenses estão se comunicando com objetos coloridos, então você descobre que além do seu idioma, eles também se comunicam por cores.
+NONE
+NONE
+NONE
+
+CENA
+Invasão Orch
+Você está em uma área que pertence à uma comunidade de Orchs e eles ficaram furiosos com sua chegada. AJA RAPIDAMENTE
+
+COMANDO
+morrer
+ACTION
+Tentar manter a calma
+Você foi atacado pelos Orchs, e infelizmente morreu.
+NONE
+NONE
+NONE
+
+END
+
+CENA
+Comunicação Multicores
+Ao sair da nave, você vê um grupo de Orchs se comunicando com objetos de cores diferentes, e então tem a ideia de procurar um objeto branco em sua bolsa, para mostrar que é um indivíduo de bem.
+
+COMANDO
+procurar_objeto
+ITEM
+Você abre a bolsa
+Encontra um tipo de faixa branca, então começa a utilizá-la
+FAIXA
+FAIXA
+NONE
+
+CENA
+Compreensão
+Após identificar-se como alguém de bem, você foi aceito pelo grupo de Orchs e, descobre que além da comunicação por cores, eles possuem um dialeto próprio, mas que pode ser entendido em alguns casos
+
+COMANDO
+descoberta
+ACTION
+Você passa a entendê-los de maneira parcial, mas a linguagem corporal ajuda em vários aspectos.
+NONE
+NONE
+NONE
+
+COMANDO 
+comunicacao_multicores
+ACTION
+Continua a procurar por objetos que possam fazer os Orchs entenderem seu obejtivo.
+NONE
+NONE
+NONE
+
+CENA
+Limbo das Cores
+Você encontra alguns objetos em sua bolsa para tentar explicar sua situação, mostrar o que procura e seu objetivo. Deseja continuar a comunicação ou pretende buscar alimentos sozinho?
+
+COMANDO 
+buscar_alimentos
+ACTION
+Você deu as costas para eles e isso foi visto como uma ofensa. Seu corpo foi atingido por muitos objetos muito pesados e seu corpo foi esmagado por eles.
+NONE
+NONE 
+NONE 
+
+END 
+
+COMANDO 
+comunicacao_prosseguir
+ACTION
+Eles parecem entender qual objetivo o trouxe até este planeta, portanto, foi acolhido pelo grupo de Orchs.
+NONE
+NONE
+NONE
+
+
+CENA
+Amizade
+Finalmente você junta-se à eles para buscar alimentos e, então passa a ser considerado alguém do bem e passa a fazer parte da comunidade
+
+COMANDO
+familia
+ACTION
+Pelo fato de conseguir se comunicar e atingir dois objetivos (achar alimento e ser companheiro dos nativos), passa a ser parte da "Família Gliese"
+
+CENA
+Familia G.
+Bem-vindo à Família Gliese
+
+COMANDO
+abaracao
+ACTION
+Há um abraço coletivo da comunidade envolvendo você terráqueo. Parabéns, agora você está salvo e possui um novo lar!
+NONE 
+NONE
+NONE
+
+END
+
+COMANDO
+dialogar
+ACTION
+Você tenta dialogar com os nativos, mas há um desentendimento...
+NONE
+NONE
+NONE
+
+CENA
+Desentendimento
+Após apenas tentar compreender os habitantes daquela terra, você é visto como ameaça para o grupo. Sua iniciativa é se esconder mas parece ser tarde demais...
+
+COMANDO
+ser_atacado
+ACTION
+Um deles te acerta com uma ferramenta pontiaguda, seu ferimento é grave, não há nada a ser feito...
+NONE
+NONE 
+NONE
+
+END
