@@ -1,14 +1,14 @@
- CENA
+CENA
+chegada_cena_1
 A Chegada
 Você é um astronauta que partiu em uma missão com mais 5 astronautas, mas ao decorrer da viagem houveram algumas complicações e seus companheiros não resistiram e restou apenas você. Ao aterrissar com sucesso na superfície do planeta Gliese 667 Cc sua nave não está em boas condições de uso e deverá ser abandonada, mas para isso você deve arranjar abrigo e alimento. Vamos lá?
-
 
 COMANDO
 iniciar_missao
 ACTION
 Iniciar Missão
 Seja bem vindo ao planeta Gliese 667 Cc! Vamos la!!!
-CENA1
+cena_2
 NONE
 NONE
 
@@ -24,7 +24,7 @@ NONE
 END
 
 CENA
-1 - 
+cena_2
 Explorar ou esperar?
 Você está em sua nave e como indicado, sua missão é explorar o planeta, isso deverá ser feito para que sua vida seja mantida, caso contrário, seus dias estão contados. 
 
@@ -46,6 +46,8 @@ NONE
 NONE
 NONE
 
+END
+
 CENA
 Comunicação
 Você ouve vozes cada vez mais próximas...
@@ -59,6 +61,8 @@ NONE
 NONE
 NONE
 
+END
+
 CENA
 Comunicacao
 Algumas vozes são ouvidas vindas de fora da nave, você possui a autonomia de sair para tentar se comunicar com os nativos.
@@ -71,6 +75,8 @@ Os gliesenses estão se comunicando com objetos coloridos, então você descobre
 NONE
 NONE
 NONE
+
+END
 
 CENA
 Invasão Orch
@@ -100,6 +106,8 @@ FAIXA
 FAIXA
 NONE
 
+END
+
 CENA
 Compreensão
 Após identificar-se como alguém de bem, você foi aceito pelo grupo de Orchs e, descobre que além da comunicação por cores, eles possuem um dialeto próprio, mas que pode ser entendido em alguns casos
@@ -120,6 +128,8 @@ NONE
 NONE
 NONE
 
+END
+
 CENA
 Limbo das Cores
 Você encontra alguns objetos em sua bolsa para tentar explicar sua situação, mostrar o que procura e seu objetivo. Deseja continuar a comunicação ou pretende buscar alimentos sozinho?
@@ -132,8 +142,6 @@ NONE
 NONE 
 NONE 
 
-END 
-
 COMANDO 
 comunicacao_prosseguir
 ACTION
@@ -142,6 +150,7 @@ NONE
 NONE
 NONE
 
+END
 
 CENA
 Amizade
@@ -151,6 +160,8 @@ COMANDO
 familia
 ACTION
 Pelo fato de conseguir se comunicar e atingir dois objetivos (achar alimento e ser companheiro dos nativos), passa a ser parte da "Família Gliese"
+
+END
 
 CENA
 Familia G.

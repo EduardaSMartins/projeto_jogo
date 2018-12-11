@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // CONTROLES GERAIS
 /////////////////////////////////////////////////////////////////////////
 
@@ -164,27 +163,89 @@ void loadGameData(char fileName[]) {
     printf("LOAD GAME DATA: file read\n");
 }
 
-Command printScene(int s) {
+// Minhas funções
+////////////////////////////////////////////////////////////////
+int buscarCena(Command comm){
+    int buscar_cena;
+    for(int i = 0; i < game.scenesSize; i++){
+        if (strcmp(comm.outcome, game.scenes[i].id) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int trataAcao(Command comm) {
+    int temItens = 1;
+    if (strcmp(comm.requirements, "NONE") != 0){
+        // Aqui acho que seria um for comparando os itens necessários com os itens
+        // que o personagem tem. Não sei onde vc está guardando isso.
+        // Da pra usar um for com strcmp para comparar o ID do item
+        printf("EDUARDA - TRATAR NECESSIDADE DE ITENS");
+        temItens = -1; // caso não tenha os item, setar em -1
+
+    }
+    if (comm.result && temItens >= 0){
+        printf(" %s \n", comm.result);
+        return buscarCena(comm);
+    } else if (temItens < 0 ){
+        printf(" %s \n", comm.missingItems);
+        return -1;
+    }
+}
+
+
+int trataItem(Command comm) {
+    // Não sei / não entendi mt bem como funcionariam os itens.
+    // Se vc só printa o resultado.. se tem que tirar o item do inventário. dependendo do item..
+    // To meio em dúvida. Mas faça seus ifs lecais aqui, e dps busque e retorne a cena (:
+    if (comm.result){
+        printf(" %s \n", comm.result);
+        return buscarCena(comm);
+    }
+}
+
+void printScene(int s) {
+    // printf("[[PRINT GAME DATA]]\n\n");
     int op;
-    char cena;
+    int nova_cena = -1;
+
     Scene scene = game.scenes[s];
     printf("[SCENE]\n");
-    printf(" %s\n %s\n %s\n\n",scene.id, scene.title, scene.description);
+    printf(" %s\n %s\n\n", scene.title, scene.description ); // imprime a cena
     printf("  [COMMANDS]\n");
-    for (int j = 0; j < scene.commandsSize; j++) {
+    for (int j = 0; j < scene.commandsSize; j++) { // laço para imprimir os comandos da cena
         Command comm = scene.commands[j];
         printf("%d: %s - [%s]\n", j+1, comm.type, comm.name);
     }
 
-    while (op <= 0 || op > scene.commandsSize) {
+    while (op <= 0 || op > scene.commandsSize) { // laço para pegar um comando válido
         printf("\n --> ");
         scanf("%d", &op);
         if (op <= 0 || op > scene.commandsSize){
-            printf("Comando inválido!\n");
+            printf("Por favor, escolha um comando válido!\n");
         }
     }
-   if(scene.commandsSize == 1)
-    return scene.commands[op];
+
+    Command choose = scene.commands[op-1]; // comando escolhido
+    if(strcmp(choose.type, "ACTION") == 0) {
+        nova_cena = trataAcao(choose); // caso seja ação, trata ação
+    } else if(strcmp(choose.type, "ITEM") == 0) {
+        nova_cena = trataItem(choose); // caso seja item, trata item
+    }
+
+    if (strcmp(choose.outcome,"exit") == 0){
+        exit(0);
+    } else if(nova_cena >= 0) {
+        printScene(nova_cena); // ir para nova cena
+    } else {
+        printf("\n\n");
+        // Não sei mt bem o que fazer aqui kkk.
+        // Aqui é caso o tratamento da ação ou item não de certo.
+        // Talvez chamar a função printando a mesma cena seja o ideal, não sei.
+        // ou usar um goto pro for que printa os comandos kkkk
+        printScene(s);
+    }
 }
 
 
